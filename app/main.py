@@ -1,7 +1,14 @@
-from    fastapi import fastapi
+from typing import Union
 
-app = fastapi()
+from FastApi import FastApi  
+
+app = FastApi()
 
 @app.get("/")
 async def root():
     return {"message": "Jeferson Caminhoes"}
+
+@pp.get("/items/{item_id}")
+def read_item(item_id: int, q: Union[str, None] = None)
+    return {"item_id":item_id, "q":q}
+
